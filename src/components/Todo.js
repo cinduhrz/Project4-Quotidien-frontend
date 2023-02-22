@@ -1,5 +1,7 @@
-const Todo = (props) => {
-    return <h1>Todo</h1>
+const Todo = ({todo}) => {
+    return <p>
+        {todo.description}
+    </p>
 }
 
 export default Todo
