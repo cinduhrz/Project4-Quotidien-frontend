@@ -39,15 +39,6 @@ flowchart TD
     Outlet --> id7[url]
 ```
 
-#### Backend Route Table
-| Route Name |     URL    | HTTP Verb |        Description         |
-|------------|------------|-----------|----------------------------|
-|   Index    | /todos     |    GET    | Displays list of todos     |
-|   Show     | /todos/:id |    GET    | Shows a specific todo      |
-|   Create   | /todos     |    POST   | Adds new todo to database  |
-|   Update   | /todos/:id |    PUT    | Updates a specific todo    |
-|   Delete   | /todos/:id |   DELETE  | Deletes a specific todo    |
-
 #### Frontend Route Table
 |    Route     | Element |    Loader   |      Action      |                   Description                  |
 |--------------|---------|-------------|------------------|------------------------------------------------|
