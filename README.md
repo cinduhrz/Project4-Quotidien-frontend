@@ -19,6 +19,7 @@ Deployed Website Link
 - Javascript
 - HTML
 - CSS
+- Bootstrap
 - Netlify
 
 #### Component Architecture
@@ -57,19 +58,32 @@ flowchart TD
 | /delete/:id  | Create  |             | todoDeleteAction | Handle submission of a delete form for todos   |
 
 #### Model
-![ERD Diagram](https://i.imgur.com/9RhaZn1.png)
+![ERD Diagram](https://i.imgur.com/Heyawax.png)
 
 #### User Stories
-
+- As a user, I can see a list of my todos.
+- As a user, I can see a specific todo.
+- As a user, I can create a new todo.
+- As a user, I can update a todo.
+- As a user, I can delete a todo.
 
 #### Wireframes
-
 ##### Mobile
+![Mobile Todo List](https://i.imgur.com/IZNmn9Z.png)
 
 ##### Desktop
 
-
 #### Daily Plan
+| Date | Task |
+|------|------|
+| 2/21 | draft plan, create readme and frontend repo |
+| 2/22 | create backend repo, full backend CRUD, deploy frontend and backend |
+| 2/23 | full frontend CRUD, styling |
+| 2/24 | finish responsive styling, add frontend functionality to display todos by date |
+| 2/25 | add functionality to "cross out" a todo, create list model, add to route table |
+| 2/26 | continue building out list model |
+| 2/27 | finishing touches, practice presentation |
+| 2/28 | presentation day :) |
 
 #### Stretch Goals
 - Create list model (2nd model)
