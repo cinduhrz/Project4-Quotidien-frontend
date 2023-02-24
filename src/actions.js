@@ -7,26 +7,15 @@ export const createAction = async ({request}) => {
     // get form data
     const formData = await request.formData()
 
-    console.log(request)
-
-    // // if category is task, status = unfinished
-    // // otherwise, status is null
-    // if (formData.get('category') === "task") {
-    //     formData.get
-    // } else {
-        
-    // }
-
     // construct request body
     const newTodo = {
         // don't need date bc it should default to current day
         description: formData.get('description'),
-        category: formData.get('category'),
-        status: (formData.get('category') === "task" && "unfinished"),
-        status: (formData.get('category') !== "task" && null)
+        category: formData.get('category')
     }
 
-    console.log(newTodo)
+    // add status depending on category
+    newTodo.status = (newTodo.category === "task" ? "unfinished" : null)
 
     // send request to backend
     await fetch(URL + "/todos/", {
@@ -39,4 +28,35 @@ export const createAction = async ({request}) => {
 
     // redirect back to index page
     return redirect("/")
+}
+
+// updateAction => update a todo from form submissions to "/update/:id"
+export const updateAction = async ({request, params}) => {
+    // get form data
+    const formData = await request.formData()
+
+    // get todo id
+    const id = params.id
+
+    // constructed updated req body
+    const updatedTodo = {
+        description: formData.get('description'),
+        category: formData.get('category'),
+    }
+
+    // hmmm but what if user updates a task todo that is already finished? this will reset it to unfinished
+    // we could prevent users from updating tasks marked as finished
+    updatedTodo.status = (updatedTodo.category === "task" ? "unfinished" : null)
+
+    // send request to backend
+    await fetch(URL + `/todos/${id}`, {
+        method: "put",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(updatedTodo)
+    })
+
+    // redirect back to show page
+    return redirect(`/todo/${id}`)
 }

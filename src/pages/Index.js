@@ -12,14 +12,14 @@ const Index = (props) => {
                 <input type="text" name="description" placeholder="start writing..."/>
 
                 <div style={{textAlign: "left"}}>
-                    <input type="radio" name="category" value="task"/>
-                        <label style={{display: "inline"}} for="task">Task</label>
+                    <input type="radio" name="category" value="task" required/>
+                        <label style={{display: "inline"}} htmlFor="task">Task</label>
                         <br/>
                     <input type="radio" name="category" value="event"/>
-                        <label style={{display: "inline"}} for="event">Event</label>
+                        <label style={{display: "inline"}} htmlFor="event">Event</label>
                         <br/>
                     <input type="radio" name="category" value="reminder"/>
-                        <label style={{display: "inline"}} for="reminder">Reminder</label>
+                        <label style={{display: "inline"}} htmlFor="reminder">Reminder</label>
                 </div>
 
                 <button>Create New To-do</button>

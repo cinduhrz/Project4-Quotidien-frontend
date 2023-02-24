@@ -3,7 +3,7 @@ import App from "./App"
 import Index from './pages/Index'
 import Show from './pages/Show'
 import { indexLoader, showLoader } from "./loaders"
-import { createAction } from "./actions"
+import { createAction, updateAction } from "./actions"
 
 const router = createBrowserRouter(createRoutesFromElements(
     <>
@@ -19,7 +19,9 @@ const router = createBrowserRouter(createRoutesFromElements(
             <Route
                 path="create"
                 action={createAction}/>
-            <Route path="update/:id"/>
+            <Route
+                path="update/:id"
+                action={updateAction}/>
             <Route path="delete/:id"/>
         </Route>
     </>
