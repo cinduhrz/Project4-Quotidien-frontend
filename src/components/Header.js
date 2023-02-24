@@ -1,7 +1,7 @@
 const Header = (props) => {
     return <>
         <nav>
-            <h1>Quotidian</h1>
+            <h1 class="text-center title">Quotidian</h1>
         </nav>
     </>
 }
