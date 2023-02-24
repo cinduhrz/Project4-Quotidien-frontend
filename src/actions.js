@@ -49,7 +49,7 @@ export const updateAction = async ({request, params}) => {
     updatedTodo.status = (updatedTodo.category === "task" ? "unfinished" : null)
 
     // send request to backend
-    await fetch(URL + `/todos/${id}`, {
+    await fetch(URL + `/todos/${id}/`, {
         method: "put",
         headers: {
             "Content-Type": "application/json"
@@ -59,4 +59,17 @@ export const updateAction = async ({request, params}) => {
 
     // redirect back to show page
     return redirect(`/todo/${id}`)
+}
+
+export const deleteAction = async ({params}) => {
+    // get todo id
+    const id = params.id
+
+    // send request to backend
+    await fetch(URL + `/todos/${id}/`, {
+        method: "delete"
+    })
+
+    // redirect back to index
+    return redirect("/")
 }
