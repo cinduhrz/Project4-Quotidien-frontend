@@ -27,12 +27,11 @@ const Index = (props) => {
         </div>
 
         <div class="d-flex flex-row justify-content-center">
-            <div>
-                <h1 class="text-center">To-Do List</h1>
+            <div class="todo-list">
+                <h1 class="todo-list-title text-center">To-Do List</h1>
                 {todos.map((todo) => <Todo todo={todo} key={todo.id}/>)}
             </div>
         </div>
-
     </>
 }
 

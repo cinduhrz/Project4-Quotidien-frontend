@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom"
 
 const Todo = ({todo}) => {
-    return (<div>
+    return (
+    <div className="todo d-flex align-items-center">
+        <div className="checkbox">
+        </div>
+
         <Link to={`/todo/${todo.id}`}>
-            <h3 style={{marginBottom: "0.5rem"}}>{todo.description}</h3>
+            <h3>{todo.description}</h3>
         </Link>
     </div>)
 }
