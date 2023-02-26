@@ -13,9 +13,9 @@ body {
 
 .todo-list {
   background-color: white;
-  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid rgb(40, 40, 40);
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 1.5rem;
   margin: 2rem 0rem;
   max-width: 80%;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.12),
@@ -23,8 +23,12 @@ body {
               4px 4px 4px rgba(0, 0, 0, 0.12);
 
   .todo-list-title {
-     margin-top: 0.75rem;
-     margin-bottom: 1.5rem;
+    margin-top: 0.75rem;
+    margin-bottom: 1.5rem;
+    
+    :hover {
+      background-color: red !important;
+    }
   }
 
   .todo {
@@ -37,19 +41,18 @@ body {
       width: 20px;
       height: 20px;
       position: absolute;
+    }
 
-      :hover {
-        cursor: pointer;
-        background-color: green  !important;
-        border: none;
-      }
+    // sass being weird, nested :hover not working for non-link/button elements, so must explicitly declare here
+    .checkbox:hover{
+      background-color: green;
     }
 
     a {
       text-decoration: none;
       color: black;
       position: relative;
-      left: 1rem;
+      left: 1.5rem;
 
       :hover{
         color: rgb(88, 88, 88);
@@ -58,7 +61,7 @@ body {
     }
 
     h3 {
-      margin: 0.5rem 1rem 0.5rem 2rem;
+      margin: 0.5rem 1rem 0.5rem 1rem;
     }
   }
 }
