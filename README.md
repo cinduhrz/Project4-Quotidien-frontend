@@ -19,6 +19,7 @@ Deployed Website Link
 - Javascript
 - HTML
 - CSS
+- SASS
 - Bootstrap
 - Netlify
 
