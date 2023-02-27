@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom"
 import { URL } from "../actions"
+import { useState } from "react"
 
 const Todo = ({todo}) => {
-    // get todo id
+    // get todo id and status
     const id = todo.id
 
     const markAsFinished = async () => {
@@ -20,28 +21,60 @@ const Todo = ({todo}) => {
             body: JSON.stringify(todo)
         })
     }
-
-    // // if task is unfinished, return unchecked checkbox and reg text
-    // if (todo.status === 'unfinished') {
-
-    // // if task is finished, return checked checkbox and crossed out text
-    // } else if (todo.status === 'finished') {
     
-    // // if todo.status is null (if its a event or reminder), just return it as a bullet point
-    // } else {
+    const markAsUnfinished = async () => {
+        // change task status
+        console.log(todo.status)
+        todo.status = (todo.category === 'task' ? "unfinished" : null)
+        console.log(todo.status)
+
+        // send request to backend
+        await fetch(URL + `/todos/${id}/`, {
+            method: "put",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(todo)
+        })
+    }
+
+
+    // set up state for checkbox
+    const [cbState, setCbState] = useState(false)
+
+    // toggle state
+    function handleClick(){
+        // check or uncheck depending on current state
+        (cbState === false) ? markAsFinished() : markAsUnfinished()
+        // then flip the state
+        setCbState(cbState => !cbState)
+    }
+
+    let toggleClassCheck = cbState ? ' active' : null
+
+    // diff styles for checkbox
+    const checkedStyle = {
+        backgroundColor: "green"
+    }
+
+    // const bulletPointStyle = {
 
     // }
-    // //
 
-    return (
+    return (<>
+
     <div className="todo d-flex align-items-center">
-        <div className="checkbox" onClick={markAsFinished}>
+        <div 
+            className={`checkbox checked-checkbox${toggleClassCheck}`}
+            onClick={handleClick}>
         </div>
 
         <Link to={`/todo/${id}`}>
             <h3>{todo.description}</h3>
         </Link>
-    </div>)
+    </div>
+    
+    </>)
 }
 
 export default Todo
