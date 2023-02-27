@@ -45,7 +45,8 @@ body {
 
     // sass being weird, nested :hover not working for non-link/button elements, so must explicitly declare here
     .checkbox:hover{
-      background-color: green;
+      cursor: pointer;
+      background-color: rgb(179, 211, 179);
     }
 
     a {
