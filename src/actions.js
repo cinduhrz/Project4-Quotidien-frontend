@@ -1,6 +1,6 @@
 import { redirect } from "react-router-dom"
 
-const URL = "https://quotidian-backend.onrender.com"
+export const URL = "https://quotidian-backend.onrender.com"
 
 // createAction => create a todo from form submissions to "/create"
 export const createAction = async ({request}) => {

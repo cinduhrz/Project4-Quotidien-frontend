@@ -26,9 +26,9 @@ const Index = (props) => {
             </Form>
         </div>
 
-        <div class="d-flex flex-row justify-content-center">
-            <div class="todo-list">
-                <h1 class="todo-list-title text-center">To-Do List</h1>
+        <div className="d-flex flex-row justify-content-center">
+            <div className="todo-list">
+                <h1 className="todo-list-title text-center">To-Do List</h1>
                 {todos.map((todo) => <Todo todo={todo} key={todo.id}/>)}
             </div>
         </div>

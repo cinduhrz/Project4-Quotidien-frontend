@@ -80,10 +80,10 @@ flowchart TD
 #### Stretch Goals
 - Create list model (2nd model)
 - User Auth
+- create functionality for users to convert reminders into todos that can be checked off
 
 #### Future Goals
 - sync with Google/Apple calender for event reminders
-- create functionality for users to convert reminders into todos that can be checked off
 
 ##### Links
 Deployed Website Link
