@@ -17,7 +17,7 @@ const Index = (props) => {
             <Form action="/create" method="post">
                 <input type="text" name="description" placeholder="start writing..."/>
 
-                <div style={{textAlign: "left"}}>
+                <div>
                     <input type="radio" name="category" value="task" required/>
                         <label style={{display: "inline"}} htmlFor="task">Task</label>
                         <br/>
