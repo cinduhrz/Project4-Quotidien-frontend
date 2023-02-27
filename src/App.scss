@@ -35,6 +35,7 @@ body {
 
   .todo {
     border-bottom: 1px solid black;
+    margin: 0 0.5rem;
 
     .checkbox {
       background-color: white;
@@ -70,5 +71,10 @@ body {
     h3 {
       margin: 0.5rem 1rem 0.5rem 1rem;
     }
+  }
+
+  .todo:last-child {
+    border-bottom: none;
+    margin-bottom: 0.5rem;
   }
 }
