@@ -25,10 +25,12 @@ body {
   .todo-list-title {
     margin-top: 0.75rem;
     margin-bottom: 1.5rem;
-    
-    :hover {
-      background-color: red !important;
-    }
+  }
+
+  .todo-list-subtitle {
+    text-align: center;
+    background-color: rgb(255, 215, 136);
+    padding: 2px;
   }
 
   .todo {

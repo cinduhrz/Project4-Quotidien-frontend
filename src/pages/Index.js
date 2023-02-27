@@ -5,7 +5,13 @@ import { Form } from "react-router-dom"
 const Index = (props) => {
     const todos = useLoaderData()
 
-    return <>
+    // function that returns todos in specified category (to DRY code)
+    const returnTodosInCategory = (category) => {
+        const filteredTodos = todos.filter((todo) => todo.category === category)
+        return (filteredTodos.map((todo) => <Todo todo={todo} key={todo.id}/>))
+    }
+
+    return (<>
         <div style={{textAlign: "center"}}>
             <h2>Create a To-do</h2>
             <Form action="/create" method="post">
@@ -29,10 +35,24 @@ const Index = (props) => {
         <div className="d-flex flex-row justify-content-center">
             <div className="todo-list">
                 <h1 className="todo-list-title text-center">To-Do List</h1>
-                {todos.map((todo) => <Todo todo={todo} key={todo.id}/>)}
+                    
+                <div class="events">
+                    <h3 class="todo-list-subtitle">Events</h3>
+                    {returnTodosInCategory('event')}
+                </div>
+
+                <div class="tasks">
+                    <h3 class="todo-list-subtitle">Tasks</h3>
+                    {returnTodosInCategory('task')}
+                </div>
+
+                <div class="reminders">
+                    <h3 class="todo-list-subtitle">Reminders</h3>
+                    {returnTodosInCategory('reminder')}
+                </div>
             </div>
         </div>
-    </>
+    </>)
 }
 
 export default Index
