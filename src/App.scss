@@ -47,6 +47,7 @@ body {
   .todo {
     border-bottom: 1px solid black;
     margin: 0 0.5rem;
+    margin-right: 1rem;
 
     .cb-or-bullet-container {
       margin-left: 0.5rem;
@@ -64,11 +65,14 @@ body {
     // sass being weird, nested :hover not working for non-link/button elements, so must explicitly declare here
     .checkbox:hover{
       cursor: pointer;
-      background-color: rgb(179, 211, 179);
+      // background-color: rgb(179, 211, 179);
+      width: 22px;
+      height: 22px;
     }
 
     .checked-checkbox {
       background-color: green;
+      transition: 0.1s;
     }
 
     .event-or-reminder-bullet {

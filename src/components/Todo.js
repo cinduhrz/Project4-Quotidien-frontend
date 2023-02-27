@@ -44,7 +44,7 @@ const Todo = ({todo}) => {
 
 
     // set up state for checkbox
-    const [cbState, setCbState] = useState(false)
+    const [cbState, setCbState] = useState(todo.status === 'finished' ? true : false)
 
     // toggle state
     function handleClick(){
