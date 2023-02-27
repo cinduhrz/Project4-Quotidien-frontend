@@ -6,6 +6,10 @@ const Todo = ({todo}) => {
     // get todo id and status
     const id = todo.id
 
+    // bool to check todo category
+    const isTaskCheck = todo.category === 'task' ? ' active' : null
+    const isEventOrReminderCheck = todo.category !== 'task' ? ' active' : null
+
     const markAsFinished = async () => {
         // change task status
         console.log(todo.status)
@@ -52,25 +56,23 @@ const Todo = ({todo}) => {
 
     let toggleClassCheck = cbState ? ' active' : null
 
-    // diff styles for checkbox
-    const checkedStyle = {
-        backgroundColor: "green"
-    }
-
-    // const bulletPointStyle = {
-
-    // }
-
     return (<>
 
     <div className="todo d-flex align-items-center">
-        <div 
-            className={`checkbox checked-checkbox${toggleClassCheck}`}
-            onClick={handleClick}>
+        <div className="cb-or-bullet-container d-flex align-items-center justify-content-center">
+            <div 
+                className={`
+                    checkbox${isTaskCheck}
+                    checked-checkbox${toggleClassCheck}`}
+                onClick={handleClick}>
+            </div>
+
+            <div className={`event-or-reminder-bullet${isEventOrReminderCheck}`}>
+            </div>
         </div>
 
         <Link to={`/todo/${id}`}>
-            <h3>{todo.description}</h3>
+            <h3 className={`crossed-out${toggleClassCheck}`}>{todo.description}</h3>
         </Link>
     </div>
     

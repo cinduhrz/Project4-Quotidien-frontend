@@ -27,15 +27,30 @@ body {
     margin-bottom: 1.5rem;
   }
 
-  .todo-list-subtitle {
+  .subtitle {
     text-align: center;
-    background-color: rgb(255, 215, 136);
     padding: 2px;
+  }
+
+  .events-subtitle {
+    background-color: pink;
+  }
+
+  .tasks-subtitle {
+    background-color: palegoldenrod;
+  }
+
+  .reminders-subtitle {
+    background-color: skyblue;
   }
 
   .todo {
     border-bottom: 1px solid black;
     margin: 0 0.5rem;
+
+    .cb-or-bullet-container {
+      margin-left: 0.5rem;
+    }
 
     .checkbox {
       background-color: white;
@@ -56,6 +71,12 @@ body {
       background-color: green;
     }
 
+    .event-or-reminder-bullet {
+      width: 10px;
+      height: 10px;
+      background-color: black;
+    }
+
     a {
       text-decoration: none;
       color: black;
@@ -71,6 +92,10 @@ body {
     h3 {
       margin: 0.5rem 1rem 0.5rem 1rem;
     }
+  }
+
+  .crossed-out {
+    text-decoration: line-through;
   }
 
   .todo:last-child {
