@@ -83,6 +83,7 @@ flowchart TD
 
 #### Future Goals
 - sync with Google/Apple calender for event reminders
+- create functionality for users to convert reminders into todos that can be checked off
 
 ##### Links
 Deployed Website Link
