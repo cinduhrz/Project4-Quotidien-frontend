@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom"
 import Todo from '../components/Todo'
 import { Form, useSubmit } from "react-router-dom"
-import { useRef, useState } from "react"
+import { useRef } from "react"
 
 const Index = (props) => {
     const todos = useLoaderData()
