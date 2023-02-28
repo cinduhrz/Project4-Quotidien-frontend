@@ -28,6 +28,7 @@ body {
   }
 
   .subtitle {
+    font-size: 1.3rem;
     text-align: center;
     padding: 2px;
     margin-bottom: 0;
@@ -106,23 +107,29 @@ body {
       text-decoration: line-through;
     }
 
-    .trash-icon {
-      
-    }
+    .buttons-container {
+      opacity: 0;
 
-    .trash-button {
-      background-color: transparent;
-      // background-color: rgb(212, 212, 212);
-      opacity: 0.75;
-      border: none;
-      border-radius: 5px;
-      padding: 0;
-      margin: 0.5rem;
-    }
+      .trash-button {
+        background-color: transparent;
+        // background-color: rgb(212, 212, 212);
+        opacity: 0.75;
+        border: none;
+        border-radius: 5px;
+        padding: 0;
+        margin: 0.5rem;
+      }
+  
+      .trash-button:hover {
+        opacity: 1;
+          background-color: rgb(238, 121, 121);
+      }
+    } 
+  }
 
-    .trash-button:hover {
+  .line-container:hover {
+    .buttons-container {
       opacity: 1;
-        background-color: rgb(238, 121, 121);
     }
   }
 
@@ -130,4 +137,8 @@ body {
     border-bottom: none;
     margin-bottom: 0.5rem;
   }
+}
+
+.events h3, .reminders h3 {
+  margin-left: 0 !important;
 }

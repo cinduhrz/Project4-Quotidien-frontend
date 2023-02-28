@@ -51,17 +51,17 @@ const Index = (props) => {
                 <h1 className="todo-list-title text-center">To-Do List</h1>
                     
                 <div className="events">
-                    <h3 className="subtitle events-subtitle">Events</h3>
+                    <h3 className="subtitle events-subtitle">events</h3>
                     {returnTodosInCategory('event')}
                 </div>
 
                 <div className="tasks">
-                    <h3 className="subtitle tasks-subtitle">Tasks</h3>
+                    <h3 className="subtitle tasks-subtitle">tasks</h3>
                     {returnTodosInCategory('task')}
                 </div>
 
                 <div className="reminders">
-                    <h3 className="subtitle reminders-subtitle">Reminders</h3>
+                    <h3 className="subtitle reminders-subtitle">reminders</h3>
                     {returnTodosInCategory('reminder')}
                 </div>
             </div>
