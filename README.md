@@ -21,6 +21,7 @@ Deployed Website Link
 - CSS
 - SASS
 - Bootstrap
+- react-icons
 - Netlify
 
 #### Component Architecture
