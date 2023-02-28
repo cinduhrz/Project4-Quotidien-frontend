@@ -109,8 +109,9 @@ body {
 
     .buttons-container {
       opacity: 0;
+      margin-right: 0.25rem;
 
-      .trash-button {
+      .trash-button, .update-button {
         background-color: transparent;
         // background-color: rgb(212, 212, 212);
         opacity: 0.75;
@@ -118,6 +119,14 @@ body {
         border-radius: 5px;
         padding: 0;
         margin: 0.5rem;
+      }
+
+      .update-button {
+        padding: 0.25rem;
+      }
+
+      .update-button:hover {
+        background: rgb(168, 168, 168);
       }
   
       .trash-button:hover {

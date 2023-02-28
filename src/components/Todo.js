@@ -1,7 +1,7 @@
 import { Link, Form } from "react-router-dom"
 import { URL } from "../actions"
 import { useState } from "react"
-import { BsXSquare } from "react-icons/bs"
+import { BsPencil, BsXSquare} from "react-icons/bs"
 
 const Todo = ({todo}) => {
     // get todo id and status
@@ -79,7 +79,12 @@ const Todo = ({todo}) => {
             </Link>
         </div>
 
-        <div className="buttons-container">
+        <div className="buttons-container d-flex align-items-center">
+            {/* form to update */}
+            <Form action={`/update/${todo.id}`} method="post">
+                <button class="update-button d-flex align-items-center"><BsPencil/></button>
+            </Form>
+
             {/* form to delete */}
             <Form action={`/delete/${todo.id}`} method="post" >
                 <button class="trash-button d-flex align-items-center"><BsXSquare size={20}/></button>
