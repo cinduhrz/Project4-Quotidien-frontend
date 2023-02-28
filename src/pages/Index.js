@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom"
 import Todo from '../components/Todo'
-import { Form } from "react-router-dom"
-// import { useRef } from "react"
+import { Form, useSubmit } from "react-router-dom"
+import { useRef, useState } from "react"
 
 const Index = (props) => {
     const todos = useLoaderData()
@@ -12,12 +12,31 @@ const Index = (props) => {
         return (filteredTodos.map((todo) => <Todo todo={todo} key={todo.id}/>))
     }
 
-    // const textInput = useRef()
-    // // const radioInput = useRef()
-    // const handleSubmit = () => {
-    //     textInput.current.value = ""
-    //     // radioInput.current.defaultChecked = ""
+
+    const textInput = useRef()
+
+    // const [checked, setChecked] = useState(false)
+    // const handleClick = () => {
+    //     setChecked(true)
     // }
+
+    let submit = useSubmit()
+    const handleSubmit = async (event) => {
+        try {
+            // console.log(checked)
+
+            submit(event.target)
+            console.log(textInput.current.value)
+            textInput.current.value = ""
+
+
+            // setChecked(false)
+
+            // console.log('checked after submit is:', checked)
+        } catch(error) {
+            console.log(error)
+        }
+    }
 
     return (<>
         <div style={{textAlign: "center"}}>
@@ -25,20 +44,38 @@ const Index = (props) => {
             <Form 
                 action="/create"
                 method="post"
-                // onSubmit={handleSubmit}
+                onSubmit={handleSubmit}
                 >
                 <input type="text" 
-                // ref={textInput}
+                ref={textInput}
                 name="description" placeholder="start writing..."/>
 
                 <div>
-                    <input type="radio" name="category" value="task" required/>
+                    <input 
+                        type="radio"
+                        name="category"
+                        value="task" required
+                        // onClick={handleClick}
+                        // defaultChecked={checked}
+                        />
                         <label style={{display: "inline"}} htmlFor="task">Task</label>
                         <br/>
-                    <input type="radio" name="category" value="event"/>
+                    <input
+                        type="radio"
+                        name="category"
+                        value="event"
+                        // onClick={handleClick}
+                        // defaultChecked={checked}
+                        />
                         <label style={{display: "inline"}} htmlFor="event">Event</label>
                         <br/>
-                    <input type="radio" name="category" value="reminder"/>
+                    <input
+                        type="radio"
+                        name="category"
+                        value="reminder"
+                        // onClick={handleClick}
+                        // defaultChecked={checked}
+                        />
                         <label style={{display: "inline"}} htmlFor="reminder">Reminder</label>
                 </div>
 

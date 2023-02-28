@@ -17,6 +17,8 @@ export const createAction = async ({request}) => {
     // add status depending on category
     newTodo.status = (newTodo.category === "task" ? "unfinished" : null)
 
+    console.log(newTodo)
+
     // send request to backend
     await fetch(URL + "/todos/", {
         method: "post",
