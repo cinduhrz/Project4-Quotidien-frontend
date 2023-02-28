@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom"
+import { Link, Form } from "react-router-dom"
 import { URL } from "../actions"
 import { useState } from "react"
+import { BsXSquare } from "react-icons/bs"
 
 const Todo = ({todo}) => {
     // get todo id and status
@@ -58,24 +59,35 @@ const Todo = ({todo}) => {
 
     return (<>
 
-    <div className="todo d-flex align-items-center">
-        <div className="cb-or-bullet-container d-flex align-items-center justify-content-center">
-            <div 
-                className={`
-                    checkbox${isTaskCheck}
-                    checked-checkbox${toggleClassCheck}`}
-                onClick={handleClick}>
+    <div className="line-container d-flex align-items-center justify-content-between">
+
+        <div className="todo d-flex">
+            <div className="cb-or-bullet-container d-flex align-items-center justify-content-center">
+                <div 
+                    className={`
+                        checkbox${isTaskCheck}
+                        checked-checkbox${toggleClassCheck}`}
+                    onClick={handleClick}>
+                </div>
+
+                <div className={`event-or-reminder-bullet${isEventOrReminderCheck}`}>
+                </div>
             </div>
 
-            <div className={`event-or-reminder-bullet${isEventOrReminderCheck}`}>
-            </div>
+            <Link to={`/todo/${id}`}>
+                <h3 className={`crossed-out${toggleClassCheck}`}>{todo.description}</h3>
+            </Link>
         </div>
 
-        <Link to={`/todo/${id}`}>
-            <h3 className={`crossed-out${toggleClassCheck}`}>{todo.description}</h3>
-        </Link>
-    </div>
+        <div className="buttons-container">
+            {/* form to delete */}
+            <Form action={`/delete/${todo.id}`} method="post" >
+                <button class="trash-button d-flex align-items-center"><BsXSquare size={20}/></button>
+            </Form>
+        </div>
     
+    </div>
+
     </>)
 }
 

@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom"
 import Todo from '../components/Todo'
 import { Form } from "react-router-dom"
+// import { useRef } from "react"
 
 const Index = (props) => {
     const todos = useLoaderData()
@@ -11,11 +12,24 @@ const Index = (props) => {
         return (filteredTodos.map((todo) => <Todo todo={todo} key={todo.id}/>))
     }
 
+    // const textInput = useRef()
+    // // const radioInput = useRef()
+    // const handleSubmit = () => {
+    //     textInput.current.value = ""
+    //     // radioInput.current.defaultChecked = ""
+    // }
+
     return (<>
         <div style={{textAlign: "center"}}>
             <h2>Create a To-do</h2>
-            <Form action="/create" method="post">
-                <input type="text" name="description" placeholder="start writing..."/>
+            <Form 
+                action="/create"
+                method="post"
+                // onSubmit={handleSubmit}
+                >
+                <input type="text" 
+                // ref={textInput}
+                name="description" placeholder="start writing..."/>
 
                 <div>
                     <input type="radio" name="category" value="task" required/>
