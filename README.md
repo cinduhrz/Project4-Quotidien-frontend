@@ -3,6 +3,7 @@
 Welcome to Quotidian - a full CRUD app for keeping track of your daily to-do lists. Built on a Django backend (with a postgreSQL database) and React frontend, Quotidian keeps track of all your day's to-do's, reminders, and events on a single list. A special section for all the things you've put the backburner persists throughout each note until you check it off - taking up less space in your brain, because you can rest assured you won't forget about them. With Quotidian, you'll always know exactly what you need to do and remember, everyday.
 
 [Deployed Site](https://quotidianlists.netlify.app/)
+
 [Backend Repo](https://github.com/cindywongdev/Project4-Quotidian-backend)
 
 <!-- Marketing Intro -->
